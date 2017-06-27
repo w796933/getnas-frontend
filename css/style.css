@@ -126,6 +126,11 @@ header .guide-search input:focus {
   padding: 30px 0;
   text-align: center;
 }
+footer {
+  background-color: #3b3b3b;
+  padding: 30px 0;
+  font-size: 13px;
+}
 .button {
   padding: 5px 15px;
   border: 1px solid #fff;
