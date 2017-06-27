@@ -1,0 +1,19 @@
+{
+  "name": "getnas-frontend",
+  "version": "1.0.0",
+  "main": "index.html",
+  "author": "Herald Yu",
+  "license": "MIT",
+  "dependencies": {
+    "Respond.js": "scottjehl/Respond",
+    "axios": "^0.16.2",
+    "html5shiv": "^3.7.3",
+    "jquery": "^3.2.1",
+    "uikit": "^3.0.0-beta.25",
+    "vue": "^2.3.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2"
+  }
+}
