@@ -39,7 +39,7 @@
                 </ul>
             </nav>
             <div class="uk-visible@s" id="account">
-                <a class="" href="#">写文章</a>
+                <a class="" href="#">登录</a>
                 <a class="button" href="#">注册</a>
             </div>
 
@@ -98,12 +98,12 @@
                 </div>
                 <a class="uk-button uk-button-primary uk-button-small uk-float-right" href="#">写文章</a>
             </div>
-            <ul>
-                <li>
+            <ul id="vue-lists">
+                <li v-for="guide in guides">
                     <div class="" uk-grid>
                         <div class="uk-width-4-5@s details">
                             <h3>
-                                <a class="uk-link-text" href="">Rockstor 基于 CentOS 的开源 NAS 系统</a>
+                                <a class="uk-link-text" href="">{{ guide.title.rendered }}</a>
                             </h3>
                             <div class="meta">
                                 <div class="views">
@@ -137,6 +137,24 @@
             <div class="uk-text-center">Copyright © 2017 上海炬树信息科技有限公司</div>
         </div>
     </footer>
+
+    <script type="text/javascript">
+        var guide_list = new Vue({
+            el: '#vue-lists',
+            data: {
+                guides: []
+            },
+            mounted() {
+                axios.get('https://www.getnas.com/wp-json/wp/v2/posts')
+                    .then(response => {
+                        this.guides = response.data
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+            }
+        });
+    </script>
 </body>
 
 </html>
