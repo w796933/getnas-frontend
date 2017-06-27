@@ -16,9 +16,17 @@ gulp.task('js', function() {
 
 gulp.task('css', function() {
     return gulp.src([
-            'node_modules/uikit/dist/css/uikit.min.css'
+            'node_modules/uikit/dist/css/uikit.min.css',
+            'node_modules/font-awesome/css/font-awesome.min.css'
         ])
         .pipe(gulp.dest('css'))
+});
+
+gulp.task('fonts', function() {
+    return gulp.src([
+            'node_modules/font-awesome/fonts/*'
+        ])
+        .pipe(gulp.dest('fonts'))
 });
 
 gulp.task('less', function() {
@@ -31,4 +39,4 @@ gulp.task('watch-less', function() {
     gulp.watch('less/style.less', ['less'])
 });
 
-gulp.task('default', ['css', 'js']);
+gulp.task('default', ['css', 'js', 'fonts']);

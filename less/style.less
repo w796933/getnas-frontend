@@ -7,6 +7,7 @@ header {
     nav { 
         display: inline;
         font-size: 14px;
+        margin-left: 5px;
         ul {
             display: inline;
             li {
@@ -71,6 +72,68 @@ header {
     }
 }
 
+.guide-lists {
+    margin-top: 20px;
+    .guide-lists-header {
+        border-bottom: 1px solid #e8e8e8;
+        padding-bottom: 15px;
+        .guide-lists-filter {
+            select {
+                width: 100px;
+                float: left;
+                height: 30px;
+                border-radius: 5px;
+                option {
+                    height: 20px;
+                }
+            }
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 20px 0;
+            .details {
+                h3 {
+                    padding: 0;
+                    margin: 0;
+                    font-size: 18px;
+                    a:hover {
+                        color: #1e87f0;
+                        text-decoration: none;
+                    }
+                }
+                .meta {
+                    margin-top: 5px;
+                    div {
+                        display: inline-block;
+                        font-size: 13px;
+                        margin-right: 15px;
+                        i {
+                            margin-right: 2px;
+                        }
+                    }
+                    .timeago {
+                        font-size: 13px;
+                    }
+                }
+            }
+            .timeago {
+                color: #666;
+                font-size: 14px;
+                margin-top: 2px;
+            }
+        }
+    }
+}
+.load-more-guides {
+    padding: 30px 0;
+    text-align: center;
+}
+
 .button {
     padding: 5px 15px;
     border: 1px solid #fff;
@@ -82,5 +145,8 @@ header {
     max-width: 1000px;
 }
 .uk-container-small {
-    max-width: 600px;
+    max-width: 800px;
+}
+.uk-button {
+    border-radius: 5px;
 }

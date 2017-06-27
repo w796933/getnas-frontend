@@ -8,6 +8,7 @@ header #logo {
 header nav {
   display: inline;
   font-size: 14px;
+  margin-left: 5px;
 }
 header nav ul {
   display: inline;
@@ -68,6 +69,63 @@ header .guide-search input {
 header .guide-search input:focus {
   border-color: #3b3b3b;
 }
+.guide-lists {
+  margin-top: 20px;
+}
+.guide-lists .guide-lists-header {
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 15px;
+}
+.guide-lists .guide-lists-header .guide-lists-filter select {
+  width: 100px;
+  float: left;
+  height: 30px;
+  border-radius: 5px;
+}
+.guide-lists .guide-lists-header .guide-lists-filter select option {
+  height: 20px;
+}
+.guide-lists ul {
+  margin: 0;
+  padding: 0;
+}
+.guide-lists ul li {
+  list-style: none;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 20px 0;
+}
+.guide-lists ul li .details h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+.guide-lists ul li .details h3 a:hover {
+  color: #1e87f0;
+  text-decoration: none;
+}
+.guide-lists ul li .details .meta {
+  margin-top: 5px;
+}
+.guide-lists ul li .details .meta div {
+  display: inline-block;
+  font-size: 13px;
+  margin-right: 15px;
+}
+.guide-lists ul li .details .meta div i {
+  margin-right: 2px;
+}
+.guide-lists ul li .details .meta .timeago {
+  font-size: 13px;
+}
+.guide-lists ul li .timeago {
+  color: #666;
+  font-size: 14px;
+  margin-top: 2px;
+}
+.load-more-guides {
+  padding: 30px 0;
+  text-align: center;
+}
 .button {
   padding: 5px 15px;
   border: 1px solid #fff;
@@ -77,5 +135,8 @@ header .guide-search input:focus {
   max-width: 1000px;
 }
 .uk-container-small {
-  max-width: 600px;
+  max-width: 800px;
+}
+.uk-button {
+  border-radius: 5px;
 }
