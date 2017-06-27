@@ -1,6 +1,81 @@
 header {
   background-color: #3b3b3b;
+  padding: 27px 0;
+}
+header #logo {
+  display: inline;
+}
+header nav {
+  display: inline;
+  font-size: 14px;
+}
+header nav ul {
+  display: inline;
+}
+header nav ul li {
+  display: inline-block;
+  padding: 5px 0;
+  margin: 0 10px;
+}
+header nav ul li a {
+  color: #fff;
+}
+header nav ul li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+header nav ul li:hover {
+  border-bottom: 2px solid #606060;
+}
+header nav ul li.active {
+  border-bottom: 2px solid #fff;
+}
+header #account {
+  float: right;
+  margin-top: 3px;
+}
+header #account a {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 14px;
+}
+header #account a:hover {
+  text-decoration: none;
+}
+header #mobile-nav {
+  float: right;
+}
+header #mobile-nav span {
+  color: #fff;
+}
+header .guide-header {
+  margin-top: 40px;
+}
+header .guide-header h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+header .guide-header p {
+  text-align: center;
+  color: #fff;
+  font-size: 0.8em;
+}
+header .guide-search input {
+  border-radius: 6px;
+}
+header .guide-search input:focus {
+  border-color: #3b3b3b;
+}
+.button {
+  padding: 5px 15px;
+  border: 1px solid #fff;
+  border-radius: 5px;
 }
 .uk-container {
   max-width: 1000px;
+}
+.uk-container-small {
+  max-width: 600px;
 }

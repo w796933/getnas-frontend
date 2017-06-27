@@ -1,8 +1,86 @@
 header {
     background-color: #3b3b3b;
+    padding: 27px 0;
+    #logo {
+        display: inline;
+        }
+    nav { 
+        display: inline;
+        font-size: 14px;
+        ul {
+            display: inline;
+            li {
+                display: inline-block;
+                padding: 5px 0;
+                margin: 0 10px;
+                a {
+                    color: #fff;
+                }
+                a:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+            li:hover {
+                border-bottom: 2px solid #606060;
+            }
+            li.active {
+                border-bottom: 2px solid #fff;
+            }
+        }
+    }
+    #account {
+        float: right;
+        margin-top: 3px;
+        a {
+            color: #fff;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
+    #mobile-nav {
+        float: right;
+        span {
+            color: #fff;
+        }
+    }
+    .guide-header {
+        margin-top: 40px;
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 1.5em;
+            margin: 0.5em;
+        }
+        p {
+            text-align: center;
+            color: #fff;
+            font-size: 0.8em;
+        }
+    }
+    .guide-search {
+        input {
+            border-radius: 6px;
+        }
+        input:focus {
+            border-color: #3b3b3b;
+        }
+    }
+}
+
+.button {
+    padding: 5px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
 }
 
 // 重置 uikit 默认样式
 .uk-container {
     max-width: 1000px;
+}
+.uk-container-small {
+    max-width: 600px;
 }

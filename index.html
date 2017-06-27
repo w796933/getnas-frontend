@@ -27,7 +27,64 @@
 <body>
     <header>
         <div class="uk-container">
-            <nav></nav>
+            <div id="logo">
+                <a href=""><img src="img/getnas-blank.svg" width="100" alt=""></a>
+            </div>
+            <nav class="uk-visible@s">
+                <ul>
+                    <li class="active"><a href="">首页</a></li>
+                    <li><a href="">热门标签</a></li>
+                    <li><a href="">问题反馈</a></li>
+                </ul>
+            </nav>
+            <div class="uk-visible@s" id="account">
+                <a class="" href="#">写文章</a>
+                <a class="button" href="#">注册</a>
+            </div>
+
+            <div class="uk-hidden@s" id="mobile-nav">
+                <span uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"></span>
+            </div>
+
+            <div id="offcanvas-nav" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+
+                    <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li class="uk-parent">
+                            <a href="#">Parent</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="uk-container uk-container-small">
+            <div class="guide-header">
+                <h1>最新技术指南</h1>
+                <!--<h1>FreeNAS 指南</h1>-->
+                <p>全站共有 130 篇相关技术指南</p>
+            </div>
+            <div class="guide-search">
+                <form class="" uk-grid>
+                    <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
+                        <input class="uk-input" type="text" name="search" value="" placeholder="搜索需要的主题">
+                    </div>
+                </form>
+            </div>
         </div>
     </header>
 </body>
