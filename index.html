@@ -88,7 +88,7 @@
     </header>
 
     <div class="uk-container uk-container-small">
-        <div class="guide-lists">
+        <div class="guide-lists" id="vue-lists">
             <div class="guide-lists-header uk-clearfix">
                 <div class="guide-lists-filter">
                     <select class="uk-select">
@@ -98,7 +98,7 @@
                 </div>
                 <a class="uk-button uk-button-primary uk-button-small uk-float-right" href="#">写文章</a>
             </div>
-            <ul id="vue-lists">
+            <ul>
                 <li v-for="guide in guides">
                     <div class="" uk-grid>
                         <div class="uk-width-4-5@s">
@@ -131,9 +131,10 @@
                     </div>
                 </li>
             </ul>
-        </div>
-        <div class="load-more-guides">
-            <a class="uk-button uk-button-default" href="">加载更多</a>
+            <div class="load-more-guides">
+                <div v-show="loadflash" uk-spinner></div>
+                <a v-show="!loadflash" class="uk-button uk-button-default" v-on:click="loadmore">加载更多</a>
+            </div>
         </div>
     </div>
 
@@ -147,16 +148,32 @@
         var guide_list = new Vue({
             el: '#vue-lists',
             data: {
-                guides: []
+                guides: [],
+                count: 1,
+                loadflash: false
             },
             mounted() {
-                axios.get('https://www.getnas.com/wp-json/wp/v2/posts?_embed')
+                axios.get('https://www.getnas.com/wp-json/wp/v2/posts?_embed&page=1')
                     .then(response => {
                         this.guides = response.data
                     })
                     .catch(function(error) {
                         console.log(error);
                     });
+            },
+            methods: {
+                loadmore: function() {
+                    this.count += 1;
+                    this.loadflash = true;
+                    axios.get('https://www.getnas.com/wp-json/wp/v2/posts?_embed&page=' + this.count)
+                        .then(respose => {
+                            this.guides = this.guides.concat(respose.data);
+                            this.loadflash = false;
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        });
+                }
             },
             filters: {
                 // 格式化时间，显示内容发布于多久以前
