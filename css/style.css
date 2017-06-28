@@ -94,6 +94,10 @@ header .guide-search input:focus {
   border-bottom: 1px solid #e8e8e8;
   padding: 20px 0;
 }
+.guide-lists ul li .author-avatar {
+  margin-right: 15px;
+  margin-top: 5px;
+}
 .guide-lists ul li .details h3 {
   padding: 0;
   margin: 0;

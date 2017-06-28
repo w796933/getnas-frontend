@@ -101,27 +101,32 @@
             <ul id="vue-lists">
                 <li v-for="guide in guides">
                     <div class="" uk-grid>
-                        <div class="uk-width-4-5@s details">
-                            <h3>
-                                <a class="uk-link-text" href="">{{ guide.title.rendered }}</a>
-                            </h3>
-                            <div class="meta">
-                                <div class="views">
-                                    <i class="fa fa-eye" aria-hidden="true"></i> 1.4k
-                                </div>
-                                <div class="comments">
-                                    <i class="fa fa-comments-o" aria-hidden="true"></i> 4
-                                </div>
-                                <div class="author">
-                                    <i class="fa fa-user-circle" aria-hidden="true"></i> 樱桃小丸子
-                                </div>
-                                <div class="uk-hidden@s">
-                                    <span class="timeago">1 个月前</span>
+                        <div class="uk-width-4-5@s">
+                            <!--<div class="author-avatar uk-float-left uk-visible@s">
+                                <img class="uk-border-circle" src="img/avatar.jpg" width="40" height="40" alt="">
+                            </div>-->
+                            <div class="details">
+                                <h3>
+                                    <a class="uk-link-text" href="">{{ guide.title.rendered }}</a>
+                                </h3>
+                                <div class="meta">
+                                    <div class="views">
+                                        <i class="fa fa-eye" aria-hidden="true"></i> 1.4k
+                                    </div>
+                                    <div class="comments">
+                                        <i class="fa fa-comments-o" aria-hidden="true"></i> 4
+                                    </div>
+                                    <div class="author">
+                                        <i class="fa fa-user-circle" aria-hidden="true"></i> 樱桃小丸子
+                                    </div>
+                                    <div class="uk-hidden@s">
+                                        <span class="timeago">{{ guide.date.substring(0, 10) }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-width-1-5 uk-visible@s">
-                            <span class="timeago">1 个月前</span>
+                            <span class="timeago">{{ strdate(guide.date) }}</span>
                         </div>
                     </div>
                 </li>
@@ -152,6 +157,39 @@
                     .catch(function(error) {
                         console.log(error);
                     });
+            },
+            methods: {
+                // 格式化时间，显示内容发布于多久以前
+                strdate: function(dateTimeStamp) {
+                    var minute = 1000 * 60;
+                    var hour = minute * 60;
+                    var day = hour * 24;
+                    var halfamonth = day * 15;
+                    var month = day * 30;
+                    var now = new Date().getTime();
+                    var diffValue = now - Date.parse(dateTimeStamp);
+                    if (diffValue < 0) {
+                        return;
+                    }
+                    var monthC = diffValue / month;
+                    var weekC = diffValue / (7 * day);
+                    var dayC = diffValue / day;
+                    var hourC = diffValue / hour;
+                    var minC = diffValue / minute;
+                    if (monthC >= 1) {
+                        result = "" + parseInt(monthC) + " 月前";
+                    } else if (weekC >= 1) {
+                        result = "" + parseInt(weekC) + " 周前";
+                    } else if (dayC >= 1) {
+                        result = "" + parseInt(dayC) + " 天前";
+                    } else if (hourC >= 1) {
+                        result = "" + parseInt(hourC) + " 小时前";
+                    } else if (minC >= 1) {
+                        result = "" + parseInt(minC) + " 分钟前";
+                    } else
+                        result = "刚刚";
+                    return result;
+                }
             }
         });
     </script>
