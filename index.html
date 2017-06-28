@@ -110,23 +110,23 @@
                                     <a class="uk-link-text" v-bind:href="guide.link" target="_blank">{{ guide.title.rendered }}</a>
                                 </h3>
                                 <div class="meta">
-                                    <div class="views">
+                                    <!--<div class="views">
                                         <i class="fa fa-eye" aria-hidden="true"></i> 1.4k
-                                    </div>
-                                    <div class="comments">
+                                    </div>-->
+                                    <!--<div class="comments">
                                         <i class="fa fa-comments-o" aria-hidden="true"></i> 4
-                                    </div>
+                                    </div>-->
                                     <div class="author">
-                                        <i class="fa fa-user-circle" aria-hidden="true"></i> 樱桃小丸子
+                                        <i class="fa fa-user-circle" aria-hidden="true"></i> {{ guide._embedded.author[0].name }}
                                     </div>
-                                    <div class="uk-hidden@s">
-                                        <span class="timeago">{{ strdate(guide.date) }}</span>
+                                    <div class="uk-hidden@s uk-text-right">
+                                        <span class="timeago">{{ guide.date | timeago }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="uk-width-1-5 uk-visible@s">
-                            <span class="timeago">{{ strdate(guide.date) }}</span>
+                        <div class="uk-width-1-5 uk-visible@s uk-text-right">
+                            <span class="timeago">{{ guide.date | timeago }}</span>
                         </div>
                     </div>
                 </li>
@@ -150,7 +150,7 @@
                 guides: []
             },
             mounted() {
-                axios.get('https://www.getnas.com/wp-json/wp/v2/posts?page=2')
+                axios.get('https://www.getnas.com/wp-json/wp/v2/posts?_embed')
                     .then(response => {
                         this.guides = response.data
                     })
@@ -158,9 +158,9 @@
                         console.log(error);
                     });
             },
-            methods: {
+            filters: {
                 // 格式化时间，显示内容发布于多久以前
-                strdate: function(dateTimeStamp) {
+                timeago: function(value) {
                     var minute = 1000 * 60;
                     var hour = minute * 60;
                     var day = hour * 24;
@@ -168,7 +168,7 @@
                     var month = day * 30;
                     var year = month * 12
                     var now = new Date().getTime();
-                    var diffValue = now - Date.parse(dateTimeStamp);
+                    var diffValue = now - Date.parse(value);
                     if (diffValue < 0) {
                         return;
                     }

@@ -92,7 +92,7 @@ header .guide-search input:focus {
 .guide-lists ul li {
   list-style: none;
   border-bottom: 1px solid #e8e8e8;
-  padding: 20px 0;
+  padding: 20px 15px;
 }
 .guide-lists ul li .author-avatar {
   margin-right: 15px;
