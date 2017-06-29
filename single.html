@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GetNAS - 科技指南创作与分享平台</title>
+
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header>
+        <div class="uk-container">
+            <div id="logo">
+                <a href=""><img src="img/getnas-blank.svg" width="100" alt=""></a>
+            </div>
+            <nav class="uk-visible@s">
+                <ul>
+                    <li class="active"><a href="">首页</a></li>
+                    <li><a href="">热门标签</a></li>
+                    <li><a href="">问题反馈</a></li>
+                </ul>
+            </nav>
+            <div class="uk-visible@s" id="account">
+                <a class="" href="#">登录</a>
+                <a class="button" href="#">注册</a>
+            </div>
+
+            <div class="uk-hidden@s" id="mobile-nav">
+                <span uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"></span>
+            </div>
+
+            <div id="offcanvas-nav" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+
+                    <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li class="uk-parent">
+                            <a href="#">Parent</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="single">
+        <div class="uk-container uk-container-small">
+            <div class="guide-header">
+                <h1 class="content-title">FreeNAS | 不接显示器，我这样获取 IP 地址！不接显示器，我这样获取 IP 地址！ </h1>
+                <span class="meta-section timestamp">2017-06-29</span>
+                <span class="meta-section author"><a href="">沸腾的鱼</a></span>
+                <span class="meta-section views"><i class="fa fa-eye" aria-hidden="true"></i> 719</span>
+                <span class="meta-section tags">
+                    <a href=""><span class="uk-label">FreeNAS</span></a>
+                    <a href=""><span class="uk-label">系统设置</span></a>
+                    <a href=""><span class="uk-label">FreeNAS</span></a>
+                    <a href=""><span class="uk-label">系统设置</span></a>
+                </span>
+            </div>
+            <div class="content-body">
+                <h3>这是一个三级标题</h3>
+                <p>简言之，将通常在自己的电脑上执行的任务，放到开放的超级计算机上运行，这种开放给公众的超级计算环境由无数台计算机组成，像水分子在天空汇成的云朵一般，形象的比喻为“云计算”。</p>
+                <pre class="code-pre yaml">
+<code langs="">image: node:latest
+
+stages:
+  - buildnode_modules/node_modules/node_modules/node_modules/node_modules/node_modules/node_modules/node_modules/node_modules/
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+test_with_lab:
+  stage: test
+  script: npm test</code></pre>
+                <p>Next, we explicitly define different continuous integration stages that will run:</p>
+                <pre><code>stages:
+  - build
+  - test</code></pre>
+                <h2>这是一个二级标题</h2>
+                <p>用户根据实际需求选择要占用多少云计算资源，就好比去餐厅吃饭，我们会根据用餐人数、对环境的要求请服务员安排位置，人少就小桌，人多就大桌，想安静就要包房。<a href="#">选择直接决定你的消费</a>。</p>
+                <p>
+                    <img src="img/cloud-computing.jpg" alt="">
+                </p>
+                <p>
+用户根据实际需求选择要占用多少云计算资源，就好比去餐厅吃饭，我们会根据用餐人数、对环境的要求请服务员安排位置，人少就小桌，人多就大桌，想安静就要包房。选择直接决定你的消费。</p>
+                <ul>
+                    <li>首先，云计算方便、实惠。云计算平台会面向我们可能的各种需求设计云计算产品，注册账号即可购买，且价格远低于传统的服务器租用或托管。</li>
+                    <li>其次，云计算资源性能好、更可靠。云计算平台由大量的计算机（服务器）集群而成，性能与集群的设备数量成正比递增，而且有专门的技术团队负责运维。</li>
+                    <li>最后，云计算是全球化的。不仅能买到位于所在国家的云计算资源，同时还可以选择分布在海外的云计算资源。</li>
+                </ul>
+                <p>简言之，将通常在自己的电脑上执行的任务，放到开放的超级计算机上运行，这种开放给公众的超级计算环境由无数台计算机组成，像水分子在天空汇成的云朵一般，形象的比喻为“云计算”。</p>
+                <p>简言之，将通常在自己的电脑上执行的任务，放到开放的超级计算机上运行，这种开放给公众的超级计算环境由无数台计算机组成，像水分子在天空汇成的云朵一般，形象的比喻为“云计算”。</p>
+                <blockquote><strong>注意：</strong>Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这么做，除了使 Vue 变得非常快之外，还有一些有用的好处。</blockquote>
+                <p>简言之，将通常在自己的电脑上执行的任务，放到开放的超级计算机上运行，这种开放给公众的超级计算环境由无数台计算机组成，像水分子在天空汇成的云朵一般，形象的比喻为“云计算”。</p>
+                <ol>
+                    <li>首先，云计算方便、实惠。云计算平台会面向我们可能的各种需求设计云计算产品</li>
+                    <li>其次，云计算资源性能好、更可靠。云计算平台由大量的计算机（服务器）集群而成</li>
+                    <li>最后，云计算是全球化的。不仅能买到位于所在国家的云计算资源</li>
+                </ol>
+                <h4>这是一个四级标题</h4>
+                <p>简言之，将通常在自己的电脑上执行的任务，<code>.gitlab-ci.yml</code> 放到开放的超级计算机上运行，这种开放给公众的超级计算环境由无数台计算机组成，像水分子在天空汇成的云朵一般，形象的比喻为“云计算”。</p>
+                <p>简言之，将通常在自己的电脑上执行的任务，放到开放的超级计算机上运行，这种开放给公众的超级计算环境由无数台计算机组成，像水分子在天空汇成的云朵一般，形象的比喻为“云计算”。</p>
+                <p>简言之，将通常在自己的电脑上执行的任务，放到开放的超级计算机上运行，这种开放给公众的超级计算环境由无数台计算机组成，像水分子在天空汇成的云朵一般，形象的比喻为“云计算”。</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <footer>
+        <div class="uk-container">
+            <div class="uk-text-center">Copyright © 2017 上海炬树信息科技有限公司</div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        
+    </script>
+</body>
+
+</html>
