@@ -233,6 +233,20 @@ header .guide-search input:focus {
   font-size: 14px;
   font-style: normal;
 }
+#content-comments {
+  border-top: 1px solid #e5e5e5;
+}
+#content-comments .comments-header {
+  overflow: hidden;
+  padding-top: 15px;
+}
+#content-comments .comments-header h4 {
+  font-size: 24px;
+  color: #cecece;
+  display: inline-block;
+  font-weight: 400;
+  margin-top: 30px;
+}
 footer {
   background-color: #3b3b3b;
   padding: 30px 0;

@@ -150,12 +150,13 @@
             data: {
                 guides: [],
                 count: 1,
-                loadflash: false
+                loadflash: true
             },
             mounted() {
                 axios.get('https://www.getnas.com/wp-json/wp/v2/posts?_embed&page=1')
                     .then(response => {
-                        this.guides = response.data
+                        this.guides = response.data;
+                        this.loadflash = false;
                     })
                     .catch(function(error) {
                         console.log(error);
