@@ -26,200 +26,134 @@
 </head>
 
 <body>
-    <header>
-        <div class="uk-container">
-            <div id="logo">
-                <a href=""><img src="img/getnas-blank.svg" width="100" alt=""></a>
-            </div>
-            <nav class="uk-visible@s">
-                <ul>
-                    <li class="active"><a href="">首页</a></li>
-                    <li><a href="">热门标签</a></li>
-                    <li><a href="">问题反馈</a></li>
-                </ul>
-            </nav>
-            <div class="uk-visible@s" id="account">
-                <a class="" href="#">登录</a>
-                <a class="button" href="#">注册</a>
-            </div>
-
-            <div class="uk-hidden@s" id="mobile-nav">
-                <span uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"></span>
-            </div>
-
-            <div id="offcanvas-nav" uk-offcanvas="overlay: true">
-                <div class="uk-offcanvas-bar">
-
-                    <ul class="uk-nav uk-nav-default">
-                        <li class="uk-active"><a href="#">Active</a></li>
-                        <li class="uk-parent">
-                            <a href="#">Parent</a>
-                            <ul class="uk-nav-sub">
-                                <li><a href="#">Sub item</a></li>
-                                <li><a href="#">Sub item</a></li>
-                            </ul>
-                        </li>
-                        <li class="uk-nav-header">Header</li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+    <div id="app">
+        <header>
+            <div class="uk-container">
+                <div id="logo">
+                    <a href=""><img src="img/getnas-blank.svg" width="100" alt=""></a>
+                </div>
+                <nav class="uk-visible@s">
+                    <ul>
+                        <li class="active"><a href="">首页</a></li>
+                        <li><a href="">热门标签</a></li>
+                        <li><a href="">问题反馈</a></li>
                     </ul>
+                </nav>
+                <div class="uk-visible@s" id="account">
+                    <a class="" href="#">登录</a>
+                    <a class="button" href="#">注册</a>
+                </div>
 
+                <div class="uk-hidden@s" id="mobile-nav">
+                    <span uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"></span>
+                </div>
+
+                <div id="offcanvas-nav" uk-offcanvas="overlay: true">
+                    <div class="uk-offcanvas-bar">
+
+                        <ul class="uk-nav uk-nav-default">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li class="uk-parent">
+                                <a href="#">Parent</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">Sub item</a></li>
+                                    <li><a href="#">Sub item</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-nav-header">Header</li>
+                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+                        </ul>
+
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="uk-container uk-container-small">
+                <div class="guide-header">
+                    <h1>{{ search_text ? search_text : '指南创作与共享平台' }}</h1>
+                    <p>{{ headers['x-wp-total'] ? '共有 ' + headers['x-wp-total'] + ' 篇相关指南' : '数据读取中...' }} </p>
+                </div>
+                <div class="guide-search">
+                    <form class="" v-on:submit.prevent="search" uk-grid>
+                        <div class="uk-inline uk-width-1-1">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
+                            <input v-model="search_text" class="uk-input" placeholder="搜索需要的主题">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
 
         <div class="uk-container uk-container-small">
-            <div class="guide-header">
-                <h1>最新技术指南</h1>
-                <!--<h1>FreeNAS 指南</h1>-->
-                <p>全站共有 169 篇相关技术指南</p>
-            </div>
-            <div class="guide-search">
-                <form class="" uk-grid>
-                    <div class="uk-inline uk-width-1-1">
-                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
-                        <input class="uk-input" type="text" name="search" value="" placeholder="搜索需要的主题">
+            <div class="guide-lists">
+                <div class="guide-lists-header uk-clearfix">
+                    <div class="guide-lists-filter">
+                        <select class="uk-select">
+                            <option value="">最新</option>
+                            <option value="">最早</option>
+                        </select>
                     </div>
-                </form>
-            </div>
-        </div>
-    </header>
-
-    <div class="uk-container uk-container-small">
-        <div class="guide-lists" id="vue-lists">
-            <div class="guide-lists-header uk-clearfix">
-                <div class="guide-lists-filter">
-                    <select class="uk-select">
-                        <option value="">最新</option>
-                        <option value="">最热</option>
-                    </select>
+                    <a class="uk-button uk-button-primary uk-button-small uk-float-right" href="#">写文章</a>
                 </div>
-                <a class="uk-button uk-button-primary uk-button-small uk-float-right" href="#">写文章</a>
-            </div>
-            <ul>
-                <li v-for="guide in guides">
-                    <div class="" uk-grid>
-                        <div class="uk-width-4-5@s">
-                            <!--<div class="author-avatar uk-float-left uk-visible@s">
-                                <img class="uk-border-circle" src="img/avatar.jpg" width="40" height="40" alt="">
-                            </div>-->
-                            <div class="details">
-                                <h3>
-                                    <a class="uk-link-text" v-bind:href="guide.link" target="_blank">{{ guide.title.rendered }}</a>
-                                </h3>
-                                <div class="meta">
-                                    <!--<div class="views">
-                                        <i class="fa fa-eye" aria-hidden="true"></i> 1.4k
-                                    </div>-->
-                                    <!--<div class="comments">
-                                        <i class="fa fa-comments-o" aria-hidden="true"></i> 4
-                                    </div>-->
-                                    <div class="author">
-                                        <i class="fa fa-user-circle" aria-hidden="true"></i> {{ guide._embedded.author[0].name }}
-                                    </div>
-                                    <div class="uk-hidden@s uk-text-right">
-                                        <span class="timeago">{{ guide.date | timeago }}</span>
+                <ul>
+                    <li v-for="guide in guides">
+                        <div class="" uk-grid>
+                            <div class="uk-width-4-5@s">
+                                <!--<div class="author-avatar uk-float-left uk-visible@s">
+                                    <img class="uk-border-circle" src="img/avatar.jpg" width="40" height="40" alt="">
+                                </div>-->
+                                <div class="details">
+                                    <h3>
+                                        <a class="uk-link-text" v-bind:href="guide.link" target="_blank">{{ guide.title.rendered }}</a>
+                                    </h3>
+                                    <div class="meta">
+                                        <!--<div class="views">
+                                            <i class="fa fa-eye" aria-hidden="true"></i> 1.4k
+                                        </div>-->
+                                        <!--<div class="comments">
+                                            <i class="fa fa-comments-o" aria-hidden="true"></i> 4
+                                        </div>-->
+                                        <div class="author">
+                                            <i class="fa fa-user-circle" aria-hidden="true"></i> {{ guide._embedded.author[0].name }}
+                                        </div>
+                                        <div class="uk-hidden@s uk-text-right">
+                                            <span class="timeago">{{ guide.date | timeago }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="uk-width-1-5 uk-visible@s uk-text-right">
+                                <span class="timeago">{{ guide.date | timeago }}</span>
+                            </div>
                         </div>
-                        <div class="uk-width-1-5 uk-visible@s uk-text-right">
-                            <span class="timeago">{{ guide.date | timeago }}</span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <div class="load-more-guides">
-                <div v-show="loadflash" uk-spinner></div>
-                <a v-show="!loadflash" class="uk-button uk-button-default" v-on:click="loadmore">加载更多</a>
+                    </li>
+                </ul>
+                <div class="load-more-guides" v-if="headers['x-wp-totalpages'] > 1">
+                    <div v-show="loadflash" uk-spinner></div>
+                    <a v-show="!loadflash" class="uk-button uk-button-default" v-on:click="loadmore">加载更多</a>
+                </div>
+                <div class="load-more-guides" v-else>
+                    <span>没有更多</span>
+                </div>
             </div>
         </div>
+
+        <footer>
+            <div class="uk-container">
+                <div class="uk-container">
+                    <div class="uk-text-center">
+                        <p>Copyright © 2013 - 2017 上海炬树信息科技有限公司</p>
+                        <p>沪ICP备13032632号-1</p>
+                    </div> 
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <footer>
-        <div class="uk-container">
-            <div class="uk-container">
-                <div class="uk-text-center">
-                    <p>Copyright © 2013 - 2017 上海炬树信息科技有限公司</p>
-                    <p>沪ICP备13032632号-1</p>
-                </div> 
-            </div>
-        </div>
-    </footer>
-
-    <script type="text/javascript">
-        var guide_list = new Vue({
-            el: '#vue-lists',
-            data: {
-                guides: [],
-                count: 1,
-                loadflash: true
-            },
-            mounted() {
-                axios.get('https://www.getnas.com/wp-json/wp/v2/posts?_embed&page=1')
-                    .then(response => {
-                        this.guides = response.data;
-                        this.loadflash = false;
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-            },
-            methods: {
-                loadmore: function() {
-                    this.count += 1;
-                    this.loadflash = true;
-                    axios.get('https://www.getnas.com/wp-json/wp/v2/posts?_embed&page=' + this.count)
-                        .then(respose => {
-                            this.guides = this.guides.concat(respose.data);
-                            this.loadflash = false;
-                        })
-                        .catch(error => {
-                            console.log(error)
-                        });
-                }
-            },
-            filters: {
-                // 格式化时间，显示内容发布于多久以前
-                timeago: function(value) {
-                    var minute = 1000 * 60;
-                    var hour = minute * 60;
-                    var day = hour * 24;
-                    var halfamonth = day * 15;
-                    var month = day * 30;
-                    var year = month * 12
-                    var now = new Date().getTime();
-                    var diffValue = now - Date.parse(value);
-                    if (diffValue < 0) {
-                        return;
-                    }
-                    var yearC = diffValue / year;
-                    var monthC = diffValue / month;
-                    var weekC = diffValue / (7 * day);
-                    var dayC = diffValue / day;
-                    var hourC = diffValue / hour;
-                    var minC = diffValue / minute;
-                    if (yearC >= 1) {
-                        result = "" + parseInt(yearC) + " 年前";
-                    } else if (monthC >= 1) {
-                        result = "" + parseInt(monthC) + " 月前";
-                    } else if (weekC >= 1) {
-                        result = "" + parseInt(weekC) + " 周前";
-                    } else if (dayC >= 1) {
-                        result = "" + parseInt(dayC) + " 天前";
-                    } else if (hourC >= 1) {
-                        result = "" + parseInt(hourC) + " 小时前";
-                    } else if (minC >= 1) {
-                        result = "" + parseInt(minC) + " 分钟前";
-                    } else
-                        result = "刚刚";
-                    return result;
-                }
-            }
-        });
-    </script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>
