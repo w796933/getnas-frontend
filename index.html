@@ -91,9 +91,9 @@
             <div class="guide-lists">
                 <div class="guide-lists-header uk-clearfix">
                     <div class="guide-lists-filter">
-                        <select class="uk-select">
-                            <option value="">最新</option>
-                            <option value="">最早</option>
+                        <select v-model="order" v-on:change="order_changed" class="uk-select">
+                            <option value="desc">最新</option>
+                            <option value="asc">最早</option>
                         </select>
                     </div>
                     <a class="uk-button uk-button-primary uk-button-small uk-float-right" href="#">写文章</a>

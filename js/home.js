@@ -4,6 +4,7 @@ new Vue({
         search_text: '',
         base_url: 'https://www.getnas.com/wp-json/wp/v2/',
         current_url: '',
+        order: 'desc',
         guides: [],
         headers: [],
         count: 1,
@@ -47,6 +48,18 @@ new Vue({
                 .catch(error => {
                     console.log(error);
                 });
+        },
+        order_changed: function () {
+            // 对已获取的 JSON 对象按时间排序
+            if (this.order == 'asc') {
+                this.guides = this.guides.sort(function (a, b) {
+                    return new Date(a.date).getTime() - new Date(b.date).getTime();
+                });
+            } else {
+                this.guides = this.guides.sort(function (a, b) {
+                    return new Date(b.date).getTime() - new Date(a.date).getTime();
+                });
+            }
         }
     },
     filters: {
