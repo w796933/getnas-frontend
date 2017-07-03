@@ -9,6 +9,10 @@
     <title><?php bloginfo('name') ; echo ' - ' ; bloginfo('description'); ?></title>
     <?php elseif ( is_single() || is_page() ): ?>
     <title><?php the_title() ; echo ' - ' ; bloginfo('name'); ?></title>
+    <?php elseif ( is_category() ): ?>
+    <title><?php single_cat_title() ; echo ' - ' ; bloginfo('name'); ?></title>
+    <?php elseif ( is_tag() ): ?>
+    <title><?php wp_title('',true); echo ' - ' ; bloginfo('name'); ?></title>
     <?php endif; ?>
 
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/uikit.min.css">
@@ -39,15 +43,15 @@
                 </div>
                 <nav class="uk-visible@s">
                     <ul>
-                        <li class="active"><a href="">首页</a></li>
+                        <li class="active"><a href="/">首页</a></li>
                         <li>
                             <a href="">热门主题</a>
                             <div id="hot-category" uk-dropdown>
                                 <ul>
-                                    <li><a href="">FreeNAS</a></li>
-                                    <li><a href="">Ubuntu</a></li>
-                                    <li><a href="">树莓派</a></li>
-                                    <li><a href="">云计算</a></li>
+                                    <li><a href="/category/freenas">FreeNAS</a></li>
+                                    <li><a href="/category/ubuntu">Ubuntu</a></li>
+                                    <li><a href="/category/raspberrypi">树莓派</a></li>
+                                    <li><a href="/category/cloud">云计算</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -70,7 +74,7 @@
                                     </div>
                                     <div class="uk-width-1-2@s">
                                         <div id="wx-code">
-                                            <p class="uk-text-center"><img src="img/wx.jpg" width="130" alt=""></p>
+                                            <p class="uk-text-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/wx.jpg" width="130" alt=""></p>
                                             <p class="uk-text-center">扫一扫关注公众号</p>
                                         </div>
                                     </div>
@@ -98,10 +102,10 @@
                             <li class="uk-parent uk-active">
                                 <a>热门主题</a>
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">FreeNAS</a></li>
-                                    <li><a href="#">Ubuntu</a></li>
-                                    <li><a href="#">树莓派</a></li>
-                                    <li><a href="#">云计算</a></li>
+                                    <li><a href="/category/freenas">FreeNAS</a></li>
+                                    <li><a href="/category/ubuntu">Ubuntu</a></li>
+                                    <li><a href="/category/raspberrypi">树莓派</a></li>
+                                    <li><a href="/category/cloud">云计算</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active">
@@ -147,7 +151,15 @@
             <?php else: ?>
             <div class="uk-container uk-container-small">
                 <div class="guide-header">
+                    <?php if ( is_category() ) : ?>
+                    <span class="uk-hidden">{{ category = '<?php echo get_the_category()[0]->term_id; ?>' }}</span>
+                    <h1>{{ search_text ? search_text : '<?php single_cat_title(); ?>' }}</h1>
+                    <?php elseif ( is_tag() ) : ?>
+                    <span class="uk-hidden">{{ tag = '<?php echo get_the_tags()[0]->term_id; ?>' }}</span>
+                    <h1>{{ search_text ? search_text : '<?php wp_title('',true); ?>' }}</h1>
+                    <?php else : ?>
                     <h1>{{ search_text ? search_text : '指南创作与共享平台' }}</h1>
+                    <?php endif; ?>
                     <p>{{ headers['x-wp-total'] ? '共有 ' + headers['x-wp-total'] + ' 篇相关指南' : '数据读取中...' }} </p>
                 </div>
                 <div class="guide-search">

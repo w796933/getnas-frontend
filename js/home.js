@@ -5,6 +5,8 @@ new Vue({
         base_url: '/wp-json/wp/v2/',
         current_url: '',
         order: 'desc',
+        category: '',
+        tag: '',
         guides: [],
         headers: [],
         count: 1,
@@ -12,6 +14,15 @@ new Vue({
     },
     mounted() {
         this.current_url = this.base_url + 'posts?_embed';
+
+        if (this.category) {
+            this.current_url = this.current_url + '&categories=' + this.category;
+        } 
+
+        if (this.tag) {
+            this.current_url = this.current_url + '&tags=' + this.tag;
+        }
+        
         axios.get(this.current_url)
             .then(response => {
                 this.guides = response.data;
@@ -27,8 +38,8 @@ new Vue({
             this.count += 1;
             this.loadflash = true;
             axios.get(this.current_url + '&page=' + this.count)
-                .then(respose => {
-                    this.guides = this.guides.concat(respose.data);
+                .then(response => {
+                    this.guides = this.guides.concat(response.data);
                     this.loadflash = false;
                 })
                 .catch(error => {
@@ -38,7 +49,7 @@ new Vue({
         search: function () {
             this.guides = [];
             this.loadflash = true;
-            this.current_url = this.base_url + 'posts?_embed' + '&search=' + this.search_text;
+            this.current_url = this.current_url + '&search=' + this.search_text;
             axios.get(this.current_url)
                 .then(response => {
                     this.guides = response.data;
