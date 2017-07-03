@@ -8,10 +8,15 @@
                 <span class="meta-section timestamp"><?php the_time('Y-n-j G:i'); ?></span>
                 <span class="meta-section author"><a href="#"><?php the_author(); ?></a></span>
                 <span class="meta-section views"><i class="fa fa-eye" aria-hidden="true"></i> <?php if(function_exists('the_views')) { the_views(); } ?></span>
-                <span class="meta-section tags">
+                <span class="meta-section tags uk-visible@s">
                     <!--<a href=""><span class="uk-label">FreeNAS</span></a>-->
                     <?php my_the_tags(); ?>
                 </span>
+                <div class="uk-hidden@s">
+                    <span class="meta-section tags">
+                        <?php my_the_tags(); ?>
+                    </span>
+                </div>
             </div>
             <div class="content-body">
                 <?php the_content(); ?>
