@@ -13,6 +13,8 @@
     <title><?php single_cat_title() ; echo ' - ' ; bloginfo('name'); ?></title>
     <?php elseif ( is_tag() ): ?>
     <title><?php wp_title('',true); echo ' - ' ; bloginfo('name'); ?></title>
+    <?php elseif ( is_404() ): ?>
+    <title><?php echo '页面不存在 - ' ; bloginfo('name'); ?></title>
     <?php endif; ?>
 
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/uikit.min.css">
@@ -61,8 +63,11 @@
                                 <ul>
                                     <li><a href="/category/freenas">FreeNAS</a></li>
                                     <li><a href="/category/ubuntu">Ubuntu</a></li>
-                                    <li><a href="/category/raspberrypi">树莓派</a></li>
+                                    <li><a href="/category/raspberry-pi">树莓派</a></li>
                                     <li><a href="/category/cloud">云计算</a></li>
+                                    <li><a href="/category/resilio-sync">Resilio Sync</a></li>
+                                    <li><a href="/category/nextcloud">NextCloud</a></li>
+                                    <li><a href="/category/Syncthing">syncthing</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -115,8 +120,11 @@
                                 <ul class="uk-nav-sub">
                                     <li><a href="/category/freenas">FreeNAS</a></li>
                                     <li><a href="/category/ubuntu">Ubuntu</a></li>
-                                    <li><a href="/category/raspberrypi">树莓派</a></li>
+                                    <li><a href="/category/raspberry-pi">树莓派</a></li>
                                     <li><a href="/category/cloud">云计算</a></li>
+                                    <li><a href="/category/resilio-sync">Resilio Sync</a></li>
+                                    <li><a href="/category/nextcloud">NextCloud</a></li>
+                                    <li><a href="/category/Syncthing">syncthing</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active">
@@ -158,15 +166,16 @@
                     </div>
                 </div>
             </div>
-            <?php if (is_single() || is_page()) : ?>
+
+            <?php if ( is_single() || is_page() || is_404() ) : ?>
             <?php else: ?>
             <div class="uk-container uk-container-small">
                 <div class="guide-header">
                     <?php if ( is_category() ) : ?>
-                    <span class="uk-hidden">{{ category = '<?php echo get_the_category()[0]->term_id; ?>' }}</span>
+                    <span class="">{{ category = '<?php echo get_the_category()[0]->term_id ? get_the_category()[0]->term_id : '0'; ?>' }}</span>
                     <h1>{{ search_text ? search_text : '<?php single_cat_title(); ?>' }}</h1>
                     <?php elseif ( is_tag() ) : ?>
-                    <span class="uk-hidden">{{ tag = '<?php echo get_the_tags()[0]->term_id; ?>' }}</span>
+                    <span class="uk-hidden">{{ tag = '<?php echo get_the_tags()[0]->term_id ? get_the_tags()[0]->term_id : '0'; ?>' }}</span>
                     <h1>{{ search_text ? search_text : '<?php wp_title('',true); ?>' }}</h1>
                     <?php else : ?>
                     <h1>{{ search_text ? search_text : '指南创作与共享平台' }}</h1>
