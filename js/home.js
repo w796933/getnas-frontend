@@ -17,12 +17,12 @@ new Vue({
 
         if (this.category) {
             this.current_url = this.current_url + '&categories=' + this.category;
-        } 
+        }
 
         if (this.tag) {
             this.current_url = this.current_url + '&tags=' + this.tag;
         }
-        
+
         axios.get(this.current_url)
             .then(response => {
                 this.guides = response.data;
@@ -46,7 +46,7 @@ new Vue({
                     console.log(error)
                 });
         },
-        search: function () {
+        search: function() {
             this.guides = [];
             this.loadflash = true;
             this.current_url = this.current_url + '&search=' + this.search_text;
@@ -60,20 +60,20 @@ new Vue({
                     console.log(error);
                 });
         },
-        order_changed: function () {
+        order_changed: function() {
             // 对已获取的 JSON 对象按时间排序
             if (this.order == 'asc') {
-                this.guides = this.guides.sort(function (a, b) {
+                this.guides = this.guides.sort(function(a, b) {
                     return new Date(a.date).getTime() - new Date(b.date).getTime();
                 });
             } else {
-                this.guides = this.guides.sort(function (a, b) {
+                this.guides = this.guides.sort(function(a, b) {
                     return new Date(b.date).getTime() - new Date(a.date).getTime();
                 });
             }
         },
-        coming_soon: function () {
-            alert('功能即将开发，敬请期待！');
+        coming_soon: function() {
+            alert('功能即将开放，敬请期待！');
         }
     },
     filters: {
