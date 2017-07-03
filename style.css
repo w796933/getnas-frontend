@@ -305,7 +305,6 @@ footer a:hover {
 }
 #single #content-comments {
   border-top: 1px solid #e5e5e5;
-  padding-bottom: 50px;
 }
 #single #content-comments .comments-header {
   overflow: hidden;
@@ -317,6 +316,39 @@ footer a:hover {
   display: inline-block;
   font-weight: 400;
   margin-top: 30px;
+}
+#single #content-comments .comments-list {
+  font-size: 14px;
+}
+#single #content-comments .comments-list ul {
+  padding: 0;
+}
+#single #content-comments .comments-list ul li {
+  list-style: none;
+}
+#single #content-comments .comments-list ul.children {
+  padding-left: 30px;
+}
+#single #content-comments .comments-list .main-comment,
+#single #content-comments .comments-list .reply-comment {
+  border-bottom: 1px solid #cecece;
+  padding: 15px 0;
+}
+#single #content-comments .comments-list .comment-header .author {
+  margin-right: 10px;
+}
+#single #content-comments .comments-list .comment-header .time {
+  color: #b3b3b3;
+}
+#single #content-comments .comments-list .comment-body p {
+  margin: 15px 20px 15px 0;
+}
+#single #content-comments .comments-list .comment-status {
+  color: #ef6500;
+  padding-top: 5px;
+}
+#single #content-comments .comments-form {
+  margin: 40px 0;
 }
 #single .creative-commons {
   line-height: 1.3;

@@ -30,12 +30,92 @@
                         <span>169 条评论</span>
                     </h4>
                 </div>
-                <div class="comments-form">
-                    评论表单
-                </div>
                 <div class="comments-list">
-                    评论列表
+                    <ul>
+                        <li>
+                            <div class="main-comment">
+                                <div class="comment-header">
+                                    <span class="author">
+                                        <a class="username" href="#">小白</a>
+                                    </span>
+                                    <span class="time"><i>2017-07-03 16:03:05</i></span>
+                                </div>
+                                <div class="comment-status">
+                                    <span></span>
+                                </div>
+                                <div class="comment-body">
+                                    <p>如果U盘插在电脑的USB3.0接口上，建议选择USB2.0接口，我的就是这样。USB3.0虚拟机识别正常，进入FreeNAS提示无磁盘，换上USB2.0接口后识别正常</p>
+                                    <p>如果U盘插在电脑的USB3.0接口上，建议选择USB2.0接口，我的就是这样。USB3.0虚拟机识别正常，进入FreeNAS提示无磁盘，换上USB2.0接口后识别正常</p>
+                                </div>
+                                <div class="comment-action">
+                                    <a href="#">回复</a>
+                                </div>
+                            </div>
+                            <ul class="children">
+                                <li>
+                                    <div class="reply-comment">
+                                        <div class="comment-header">
+                                            <span class="author">
+                                                <a class="username" href="#">李铭</a>
+                                            </span>
+                                            <span class="time"><i>2017-07-03 16:03:05</i></span>
+                                        </div>
+                                        <div class="comment-status">
+                                            <span>评论需要管理员审核</span>
+                                        </div>
+                                        <div class="comment-body">
+                                            <p>我用vi命令修改，但是保存时提示文件只读不能保存。请问是用什么方法修改的。</p>
+                                        </div>
+                                        <div class="comment-action">
+                                            <a href="#">回复</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="main-comment">
+                                <div class="comment-header">
+                                    <span class="author">
+                                        <a class="username" href="#">小白</a>
+                                    </span>
+                                    <span class="time">2017-07-03 16:03:05</span>
+                                </div>
+                                <div class="comment-status">
+                                    <span>评论需要管理员审核</span>
+                                </div>
+                                <div class="comment-body">
+                                    <p>如果U盘插在电脑的USB3.0接口上，建议选择USB2.0接口，我的就是这样。USB3.0虚拟机识别正常，进入FreeNAS提示无磁盘，换上USB2.0接口后识别正常</p>
+                                </div>
+                                <div class="comment-action">
+                                    <a href="#">回复</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
+                <div class="comments-form">
+                    <form uk-grid>
+                        <div class="uk-width-1-1@s">
+                            <div class="uk-margin">
+                                <textarea class="uk-textarea" placeholder="发表评论"></textarea>
+                            </div>
+                            <div class="uk-margin">
+                                <input class="uk-input" type="text" name="" value="" placeholder="昵称">
+                            </div>
+                            <div class="uk-margin">
+                                <input class="uk-input" type="email" name="" value="" placeholder="E-mail">
+                            </div>
+                            <div class="uk-margin">
+                                <input class="uk-input" type="text" name="" value="" placeholder="网址(选填)">
+                            </div>
+                            <div class="uk-margin">
+                                <button class="uk-button uk-button-primary" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
             </div>
         </div>
 

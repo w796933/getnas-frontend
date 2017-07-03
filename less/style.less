@@ -322,13 +322,9 @@ footer {
 
     #content-comments {
         border-top: 1px solid #e5e5e5;
-        padding-bottom: 50px;
         .comments-header {
             overflow: hidden;
             padding-top: 15px;
-            .comments-count {
-
-            }
             h4 {
                 font-size: 24px;
                 color: #cecece;
@@ -336,6 +332,42 @@ footer {
                 font-weight: 400;
                 margin-top: 30px;
             }
+        }
+        .comments-list {
+            font-size: 14px;
+            ul {
+                padding: 0;
+                li {
+                    list-style: none;
+                }
+            }
+            ul.children {
+                padding-left: 30px;
+            }
+            .main-comment, .reply-comment {
+                border-bottom: 1px solid #cecece;
+                padding: 15px 0;
+            }
+            .comment-header {
+                .author {
+                    margin-right: 10px;
+                }
+                .time {
+                    color: #b3b3b3;
+                }
+            }
+            .comment-body {
+                p {
+                    margin: 15px 20px 15px 0;
+                }
+            }
+            .comment-status {
+                color: #ef6500;
+                padding-top: 5px;
+            }
+        }
+        .comments-form {
+            margin: 40px 0;
         }
     }
 

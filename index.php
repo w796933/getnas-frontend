@@ -19,7 +19,7 @@
                                 </div>-->
                                 <div class="details">
                                     <h3>
-                                        <a class="uk-link-text" v-bind:href="guide.link" target="_blank">{{ guide.title.rendered }}</a>
+                                        <a class="uk-link-text" v-bind:href="guide.link">{{ guide.title.rendered }}</a>
                                     </h3>
                                     <div class="meta">
                                         <!--<div class="views">
