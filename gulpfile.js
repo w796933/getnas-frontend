@@ -32,7 +32,7 @@ gulp.task('fonts', function() {
 gulp.task('less', function() {
     return gulp.src(['less/style.less'])
         .pipe(less())
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('./'))
 });
 
 gulp.task('watch-less', function() {
