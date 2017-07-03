@@ -172,7 +172,7 @@
             <div class="uk-container uk-container-small">
                 <div class="guide-header">
                     <?php if ( is_category() ) : ?>
-                    <span class="">{{ category = '<?php echo get_the_category()[0]->term_id ? get_the_category()[0]->term_id : '0'; ?>' }}</span>
+                    <span class="uk-hidden">{{ category = '<?php echo get_the_category()[0]->term_id ? get_the_category()[0]->term_id : '0'; ?>' }}</span>
                     <h1>{{ search_text ? search_text : '<?php single_cat_title(); ?>' }}</h1>
                     <?php elseif ( is_tag() ) : ?>
                     <span class="uk-hidden">{{ tag = '<?php echo get_the_tags()[0]->term_id ? get_the_tags()[0]->term_id : '0'; ?>' }}</span>
