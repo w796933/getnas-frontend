@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     data: {
         search_text: '',
-        base_url: 'https://www.getnas.com/wp-json/wp/v2/',
+        base_url: '/wp-json/wp/v2/',
         current_url: '',
         order: 'desc',
         guides: [],
