@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
+var cleanCSS = require('gulp-clean-css');
+var uglify = require('gulp-uglify');
 
 gulp.task('js', function() {
     return gulp.src([
@@ -32,6 +34,7 @@ gulp.task('fonts', function() {
 gulp.task('less', function() {
     return gulp.src(['less/style.less'])
         .pipe(less())
+        .pipe(cleanCSS())
         .pipe(gulp.dest('./'))
 });
 
@@ -39,4 +42,4 @@ gulp.task('watch-less', function() {
     gulp.watch('less/style.less', ['less'])
 });
 
-gulp.task('default', ['css', 'js', 'fonts']);
+gulp.task('default', ['css', 'js', 'fonts', 'less']);
