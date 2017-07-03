@@ -140,7 +140,7 @@
                                 <a>微信公众号</a>
                                 <ul class="uk-nav-sub">
                                     <li>
-                                        <img src="img/wx.jpg" width="120" alt="">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/wx.jpg" width="120" alt="">
                                     </li>
                                     <li>
                                         <a href="">公众号：getnas</a>
