@@ -60,6 +60,9 @@ new Vue({
                     return new Date(b.date).getTime() - new Date(a.date).getTime();
                 });
             }
+        },
+        coming_soon: function () {
+            alert('功能即将开发，敬请期待！');
         }
     },
     filters: {

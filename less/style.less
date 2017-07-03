@@ -22,11 +22,66 @@ header {
                     text-decoration: none;
                 }
             }
-            li:hover {
+            li.under:hover {
                 border-bottom: 2px solid #606060;
             }
             li.active {
                 border-bottom: 2px solid #fff;
+            }
+        }
+
+        div#user-communication {
+            padding: 15px;
+            color: #535353;
+            font-size: 14px;
+            width: 460px;
+            border-radius: 3px;
+            ul {
+                display: inline-block;
+                padding: 10px 0;
+                li {
+                    display: block;
+                    margin-bottom: 8px;
+                    a {
+                        color: #535353;
+                    }
+                }
+            }
+            #wx-code {
+                border: 1px solid #c9c9c9;
+                border-radius: 5px;
+                padding: 15px 0;
+
+            }
+            p {
+                margin: 0;
+            }
+        }
+
+        div#hot-category {
+            padding: 15px;
+            color: #535353;
+            font-size: 14px;
+            border-radius: 3px;
+            width: 350px;
+            text-align: center;
+            a {
+                color: #535353;
+            }
+            ul {
+                padding: 0;
+                li {
+                    border: 1px solid #e3e3e3;
+                    padding: 3px 6px;
+                    border-radius: 3px;
+                    background-color: #f9f9f9;
+                    width: 120px;
+                    text-align: center;
+                    margin: 6px 10px;
+                }
+                li:hover {
+                    background-color: #fff;
+                }
             }
         }
     }
@@ -42,12 +97,16 @@ header {
             text-decoration: none;
         }
     }
-    #mobile-nav {
+    #mobile-nav-btn {
         float: right;
         span {
             color: #fff;
         }
     }
+    #offcanvas-nav {
+
+    }
+
     .guide-header {
         margin-top: 40px;
         h1 {
@@ -69,6 +128,16 @@ header {
         input:focus {
             border-color: #3b3b3b;
         }
+    }
+}
+
+footer {
+    color: #cacaca;
+    a {
+        color: #cacaca;
+    }
+    a:hover {
+        color: #cacaca;
     }
 }
 

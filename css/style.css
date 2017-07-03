@@ -25,11 +25,63 @@ header nav ul li a:hover {
   color: #fff;
   text-decoration: none;
 }
-header nav ul li:hover {
+header nav ul li.under:hover {
   border-bottom: 2px solid #606060;
 }
 header nav ul li.active {
   border-bottom: 2px solid #fff;
+}
+header nav div#user-communication {
+  padding: 15px;
+  color: #535353;
+  font-size: 14px;
+  width: 460px;
+  border-radius: 3px;
+}
+header nav div#user-communication ul {
+  display: inline-block;
+  padding: 10px 0;
+}
+header nav div#user-communication ul li {
+  display: block;
+  margin-bottom: 8px;
+}
+header nav div#user-communication ul li a {
+  color: #535353;
+}
+header nav div#user-communication #wx-code {
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  padding: 15px 0;
+}
+header nav div#user-communication p {
+  margin: 0;
+}
+header nav div#hot-category {
+  padding: 15px;
+  color: #535353;
+  font-size: 14px;
+  border-radius: 3px;
+  width: 350px;
+  text-align: center;
+}
+header nav div#hot-category a {
+  color: #535353;
+}
+header nav div#hot-category ul {
+  padding: 0;
+}
+header nav div#hot-category ul li {
+  border: 1px solid #e3e3e3;
+  padding: 3px 6px;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+  width: 120px;
+  text-align: center;
+  margin: 6px 10px;
+}
+header nav div#hot-category ul li:hover {
+  background-color: #fff;
 }
 header #account {
   float: right;
@@ -43,10 +95,10 @@ header #account a {
 header #account a:hover {
   text-decoration: none;
 }
-header #mobile-nav {
+header #mobile-nav-btn {
   float: right;
 }
-header #mobile-nav span {
+header #mobile-nav-btn span {
   color: #fff;
 }
 header .guide-header {
@@ -68,6 +120,15 @@ header .guide-search input {
 }
 header .guide-search input:focus {
   border-color: #3b3b3b;
+}
+footer {
+  color: #cacaca;
+}
+footer a {
+  color: #cacaca;
+}
+footer a:hover {
+  color: #cacaca;
 }
 .guide-lists {
   margin-top: 20px;

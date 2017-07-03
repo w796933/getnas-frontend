@@ -30,21 +30,58 @@
         <header>
             <div class="uk-container">
                 <div id="logo">
-                    <a href=""><img src="img/getnas-blank.svg" width="100" alt=""></a>
+                    <a href="/"><img src="img/getnas-blank.svg" width="100" alt="GetNAS"></a>
                 </div>
                 <nav class="uk-visible@s">
                     <ul>
                         <li class="active"><a href="">首页</a></li>
-                        <li><a href="">热门标签</a></li>
-                        <li><a href="">问题反馈</a></li>
+                        <li>
+                            <a href="">热门主题</a>
+                            <div id="hot-category" uk-dropdown>
+                                <ul>
+                                    <li><a href="">FreeNAS</a></li>
+                                    <li><a href="">Ubuntu</a></li>
+                                    <li><a href="">树莓派</a></li>
+                                    <li><a href="">云计算</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">用户交流</a>
+                            <div id="user-communication" uk-dropdown>
+                                <div uk-grid>
+                                    <div class="uk-width-1-2@s">
+                                        <ul>
+                                            <li>
+                                                <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=1fe3e613e4c965f1afae3b0f5ef3fdc5ebbe2be15b4216ef453861564773936f"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[三]" title="FreeNAS中文[三]" border="0"> 三群</a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=f222e106a387bc38670959a4035c2d3add7f23f347a3f47f18a6aed9a4a02f5d"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[二]" title="FreeNAS中文[二]" border="0"> 二群(已满)</a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=ec72ca04a97677540608612f33d00c9a62ff4c9bcb3e1630d83fee075c7e61f2"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[一]" title="FreeNAS中文[一]" border="0"> 一群(已满)</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="uk-width-1-2@s">
+                                        <div id="wx-code">
+                                            <p class="uk-text-center"><img src="img/wx.jpg" width="130" alt=""></p>
+                                            <p class="uk-text-center">扫一扫关注公众号</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li class="under"><a href="https://shop19309090.youzan.com" target="_blank">IT 商店</a></li>
                     </ul>
                 </nav>
                 <div class="uk-visible@s" id="account">
-                    <a class="" href="#">登录</a>
-                    <a class="button" href="#">注册</a>
+                    <a v-on:click="coming_soon" href="#">登录</a>
+                    <a v-on:click="coming_soon" class="button" href="#">注册</a>
                 </div>
 
-                <div class="uk-hidden@s" id="mobile-nav">
+                <div class="uk-hidden@s" id="mobile-nav-btn">
                     <span uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"></span>
                 </div>
 
@@ -52,19 +89,50 @@
                     <div class="uk-offcanvas-bar">
 
                         <ul class="uk-nav uk-nav-default">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li class="uk-parent">
-                                <a href="#">Parent</a>
+                            <li class="uk-active"><a href="/">首页</a></li>
+                            <li class="uk-parent uk-active">
+                                <a>热门主题</a>
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">Sub item</a></li>
-                                    <li><a href="#">Sub item</a></li>
+                                    <li><a href="#">FreeNAS</a></li>
+                                    <li><a href="#">Ubuntu</a></li>
+                                    <li><a href="#">树莓派</a></li>
+                                    <li><a href="#">云计算</a></li>
                                 </ul>
                             </li>
-                            <li class="uk-nav-header">Header</li>
-                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
-                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+                            <li class="uk-active">
+                                <a href="https://shop19309090.youzan.com">IT 商店</a>
+                            </li>
+                            <li class="uk-parent uk-active">
+                                <a>用户交流</a>
+                                <ul class="uk-nav-sub">
+                                    <li>
+                                        <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=1fe3e613e4c965f1afae3b0f5ef3fdc5ebbe2be15b4216ef453861564773936f"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[三]" title="FreeNAS中文[三]" border="0"> 三群</a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=f222e106a387bc38670959a4035c2d3add7f23f347a3f47f18a6aed9a4a02f5d"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[二]" title="FreeNAS中文[二]" border="0"> 二群(已满)</a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=ec72ca04a97677540608612f33d00c9a62ff4c9bcb3e1630d83fee075c7e61f2"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[一]" title="FreeNAS中文[一]" border="0"> 一群(已满)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent uk-active">
+                                <a>微信公众号</a>
+                                <ul class="uk-nav-sub">
+                                    <li>
+                                        <img src="img/wx.jpg" width="120" alt="">
+                                    </li>
+                                    <li>
+                                        <a href="">公众号：getnas</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <!--<li class="uk-nav-header"></li>
+                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span> 登录</a></li>
+                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: users"></span> 注册</a></li>
                             <li class="uk-nav-divider"></li>
-                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> 退出</a></li>-->
                         </ul>
 
                     </div>
@@ -80,7 +148,7 @@
                     <form class="" v-on:submit.prevent="search" uk-grid>
                         <div class="uk-inline uk-width-1-1">
                             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
-                            <input v-model="search_text" class="uk-input" placeholder="搜索需要的主题">
+                            <input v-model="search_text" class="uk-input" placeholder="教程搜索">
                         </div>
                     </form>
                 </div>
@@ -96,7 +164,7 @@
                             <option value="asc">最早</option>
                         </select>
                     </div>
-                    <a class="uk-button uk-button-primary uk-button-small uk-float-right" href="#">写文章</a>
+                    <a v-on:click="coming_soon" class="uk-button uk-button-primary uk-button-small uk-float-right" href="#">写文章</a>
                 </div>
                 <ul>
                     <li v-for="guide in guides">
@@ -147,7 +215,7 @@
                 <div class="uk-container">
                     <div class="uk-text-center">
                         <p>Copyright © 2013 - 2017 上海炬树信息科技有限公司</p>
-                        <p>沪ICP备13032632号-1</p>
+                        <p>沪ICP备13032632号-1 <a href="#">SiteMap</a></p>
                     </div> 
                 </div>
             </div>
