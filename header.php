@@ -197,6 +197,15 @@
                         </div>
                     <?php endif;?>
 
+                    <?php if ( is_category('raspberry-pi') ) : ?>
+                        <div class="relate-link">
+                            <ul>
+                                <li>[<a href="/what-is-raspberry-pi">树莓派介绍</a>]</li>
+                                <!--<li>[<a href="/freenas-download">系统下载</a>]</li>-->
+                            </ul>
+                        </div>
+                    <?php endif;?>
+
                     <p>{{ headers['x-wp-total'] ? '共有 ' + headers['x-wp-total'] + ' 篇相关指南' : '数据读取中...' }} </p>
                 </div>
                 
