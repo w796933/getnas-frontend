@@ -7,7 +7,7 @@
                 <h1 class="content-title"><?php the_title(); ?></h1>
                 <span class="meta-section timestamp">最近更新：<?php the_modified_time('Y-n-j G:i'); ?></span>
                 <span class="meta-section author"><a href="#"><?php the_author(); ?></a></span>
-                <span class="meta-section views"><i class="fa fa-eye" aria-hidden="true"></i> <?php if(function_exists('the_views')) { the_views(); } ?></span>
+                <span class="meta-section views"><i class="fa fa-eye" aria-hidden="true"></i> <?php echo pvc_get_post_views($id); ?></span>
             </div>
             <hr>
             <div class="content-body">

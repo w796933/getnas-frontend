@@ -78,7 +78,10 @@
                                     <div class="uk-width-1-2@s">
                                         <ul>
                                             <li>
-                                                <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=1fe3e613e4c965f1afae3b0f5ef3fdc5ebbe2be15b4216ef453861564773936f"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[三]" title="FreeNAS中文[三]" border="0"> 三群</a>
+                                                <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=ceca4b55154b243523bbd46102da34ec4f9963097c3c7363a5bd825c388f46d0"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[四]" title="FreeNAS中文[四]"> 四群</a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=1fe3e613e4c965f1afae3b0f5ef3fdc5ebbe2be15b4216ef453861564773936f"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[三]" title="FreeNAS中文[三]" border="0"> 三群(已满)</a>
                                             </li>
                                             <li>
                                                 <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=f222e106a387bc38670959a4035c2d3add7f23f347a3f47f18a6aed9a4a02f5d"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[二]" title="FreeNAS中文[二]" border="0"> 二群(已满)</a>
@@ -134,7 +137,10 @@
                                 <a>用户交流</a>
                                 <ul class="uk-nav-sub">
                                     <li>
-                                        <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=1fe3e613e4c965f1afae3b0f5ef3fdc5ebbe2be15b4216ef453861564773936f"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[三]" title="FreeNAS中文[三]" border="0"> 三群</a>
+                                        <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=ceca4b55154b243523bbd46102da34ec4f9963097c3c7363a5bd825c388f46d0"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[四]" title="FreeNAS中文[四]"> 四群</a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=1fe3e613e4c965f1afae3b0f5ef3fdc5ebbe2be15b4216ef453861564773936f"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[三]" title="FreeNAS中文[三]" border="0"> 三群(已满)</a>
                                     </li>
                                     <li>
                                         <a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=f222e106a387bc38670959a4035c2d3add7f23f347a3f47f18a6aed9a4a02f5d"><img src="https://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS中文[二]" title="FreeNAS中文[二]" border="0"> 二群(已满)</a>
