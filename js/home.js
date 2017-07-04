@@ -10,7 +10,7 @@ new Vue({
         guides: [],
         headers: [],
         count: 1,
-        loadflash: true
+        loadflash: false
     },
     mounted() {
         this.current_url = this.base_url + 'posts?_embed';
@@ -22,6 +22,8 @@ new Vue({
         if (this.tag) {
             this.current_url = this.current_url + '&tags=' + this.tag;
         }
+
+        this.loadflash = true;
 
         axios.get(this.current_url)
             .then(response => {

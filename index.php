@@ -43,14 +43,22 @@
                         </div>
                     </li>
                 </ul>
-                <div class="load-more-guides" v-if="headers['x-wp-totalpages'] >= count">
-                    <div v-show="loadflash" uk-spinner></div>
-                    <a v-show="!loadflash" class="uk-button uk-button-default" v-on:click="loadmore">加载更多</a>
+
+                <div class="load-more-guides">
+                    <template v-if="loadflash">
+                        <div uk-spinner></div>
+                    </template>
+                    <template v-else>
+                        <div v-if="headers['x-wp-totalpages'] > count">
+                            <a v-show="!loadflash" class="uk-button uk-button-default" v-on:click="loadmore">加载更多</a>
+                        </div>
+                        <div v-else>
+                            <span v-if="headers['x-wp-totalpages'] = 0">未找到内容</span>
+                            <span v-else>没有更多</span>
+                        </div>
+                    </template>
                 </div>
-                <div class="load-more-guides" v-else>
-                    <span v-if="headers['x-wp-totalpages'] = 0">未找到内容</span>
-                    <span v-else>没有更多</span>
-                </div>
+
             </div>
         </div>
 
