@@ -178,16 +178,27 @@
             <div class="uk-container uk-container-small">
                 <div class="guide-header">
                     <?php if ( is_category() ) : ?>
-                    <span class="uk-hidden">{{ category = '<?php echo get_the_category()[0]->term_id ? get_the_category()[0]->term_id : '0'; ?>' }}</span>
-                    <h1>{{ search_text ? search_text : '<?php single_cat_title(); ?>' }}</h1>
+                        <span class="uk-hidden">{{ category = '<?php echo get_the_category()[0]->term_id ? get_the_category()[0]->term_id : '0'; ?>' }}</span>
+                        <h1>{{ search_text ? search_text : '<?php single_cat_title(); ?>' }}</h1>
                     <?php elseif ( is_tag() ) : ?>
-                    <span class="uk-hidden">{{ tag = '<?php echo get_the_tags()[0]->term_id ? get_the_tags()[0]->term_id : '0'; ?>' }}</span>
-                    <h1>{{ search_text ? search_text : '<?php wp_title('',true); ?>' }}</h1>
+                        <span class="uk-hidden">{{ tag = '<?php echo get_the_tags()[0]->term_id ? get_the_tags()[0]->term_id : '0'; ?>' }}</span>
+                        <h1>{{ search_text ? search_text : '<?php wp_title('',true); ?>' }}</h1>
                     <?php else : ?>
-                    <h1>{{ search_text ? search_text : '指南创作与共享平台' }}</h1>
+                        <h1>{{ search_text ? search_text : '指南创作与共享平台' }}</h1>
                     <?php endif; ?>
+
+                    <?php if ( is_category('freenas') ) : ?>
+                        <div class="relate-link">
+                            <ul>
+                                <li>[<a href="/what-is-freenas">FreeNAS 简介</a>]</li>
+                                <li>[<a href="/freenas-download">系统下载</a>]</li>
+                            </ul>
+                        </div>
+                    <?php endif;?>
+
                     <p>{{ headers['x-wp-total'] ? '共有 ' + headers['x-wp-total'] + ' 篇相关指南' : '数据读取中...' }} </p>
                 </div>
+                
                 <div class="guide-search">
                     <form class="" v-on:submit.prevent="search" uk-grid>
                         <div class="uk-inline uk-width-1-1">
