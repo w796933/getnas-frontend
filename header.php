@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/uikit.min.css">
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+    <link rel="shortcut icon" href="/favicon.ico">
 
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.min.js"></script>
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/uikit.min.js"></script>
