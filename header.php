@@ -201,7 +201,15 @@
                         <div class="relate-link">
                             <ul>
                                 <li>[<a href="/what-is-raspberry-pi">树莓派介绍</a>]</li>
-                                <!--<li>[<a href="/freenas-download">系统下载</a>]</li>-->
+                            </ul>
+                        </div>
+                    <?php endif;?>
+
+                    <?php if ( is_category('ubuntu') ) : ?>
+                        <div class="relate-link">
+                            <ul>
+                                <li>[<a href="/what-is-ubuntu">Ubuntu 介绍</a>]</li>
+                                <li>[<a href="/ubuntu-download">系统下载</a>]</li>
                             </ul>
                         </div>
                     <?php endif;?>
