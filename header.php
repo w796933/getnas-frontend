@@ -209,7 +209,7 @@
                     <?php if ( is_tag('digitalocean') ) : ?>
                         <div class="relate-link">
                             <ul>
-                                <li>[<a href="https://m.do.co/c/ea1be3ceca09">DigitalOcean 官网</a>]</li>
+                                <li>[<a href="https://m.do.co/c/ea1be3ceca09" target="_blank">DigitalOcean 官网</a>]</li>
                             </ul>
                         </div>
                     <?php endif;?>
