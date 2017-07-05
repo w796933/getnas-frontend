@@ -206,6 +206,14 @@
                         </div>
                     <?php endif;?>
 
+                    <?php if ( is_tag('digitalocean') ) : ?>
+                        <div class="relate-link">
+                            <ul>
+                                <li>[<a href="https://m.do.co/c/ea1be3ceca09">DigitalOcean 官网</a>]</li>
+                            </ul>
+                        </div>
+                    <?php endif;?>
+
                     <p>{{ headers['x-wp-total'] ? '共有 ' + headers['x-wp-total'] + ' 篇相关指南' : '数据读取中...' }} </p>
                 </div>
                 
