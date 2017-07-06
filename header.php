@@ -213,6 +213,14 @@
                             </ul>
                         </div>
                     <?php endif;?>
+                    
+                    <?php if ( is_category('resilio-sync') ) : ?>
+                        <div class="relate-link">
+                            <ul>
+                                <li>[<a href="/resilio-sync">Resilio Sync 介绍</a>]</li>
+                            </ul>
+                        </div>
+                    <?php endif;?>
 
                     <?php if ( is_tag('digitalocean') ) : ?>
                         <div class="relate-link">
