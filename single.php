@@ -130,7 +130,7 @@
         </div>
 
         <div class="creative-commons">
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/by-nc-sa-88x31.png" /></a>
             <div class="license-text">
                 本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
             </div>
