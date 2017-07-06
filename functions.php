@@ -13,3 +13,10 @@ if ( ! function_exists('my_the_tags') ) :
         }
     }
 endif;
+
+// 修复 rest api 禁止未登录用户发表评论的问题
+// https://developer.wordpress.org/reference/classes/wp_rest_comments_controller/create_item_permissions_check/
+function filter_rest_allow_anonymous_comments() {
+    return true;
+}
+add_filter('rest_allow_anonymous_comments','filter_rest_allow_anonymous_comments');

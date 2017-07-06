@@ -24,118 +24,123 @@
             <?php endwhile; ?>
         </div>
 
-        <?php if ( 1 > 2 ) : ?>
-        <!--<div id="content-comments">
+        <div id="content-comments">
             <div class="uk-container uk-container-small">
                 <div class="comments-header">
                     <h4 class="comments-count">
-                        <span>169 条评论</span>
+                        <span>{{ headers["x-wp-total"] }} 条评论</span>
+                        <p class="uk-hidden">{{ post_id = '<?php echo $id; ?>' }}</p>
+
                     </h4>
                 </div>
                 <div class="comments-list">
                     <ul>
-                        <li>
+                        <li v-for="comment in comments" v-if="!comment.parent">
                             <div class="main-comment">
                                 <div class="comment-header">
                                     <span class="author">
-                                        <a class="username" href="#">小白</a>
+                                        <a class="username">{{ comment.author_name }}</a>
                                     </span>
-                                    <span class="time"><i>2017-07-03 16:03:05</i></span>
+                                    <span class="time">{{ comment.date | date_format }}</span>
                                 </div>
-                                <div class="comment-status">
-                                    <span></span>
-                                </div>
-                                <div class="comment-body">
-                                    <p>如果U盘插在电脑的USB3.0接口上，建议选择USB2.0接口，我的就是这样。USB3.0虚拟机识别正常，进入FreeNAS提示无磁盘，换上USB2.0接口后识别正常</p>
-                                    <p>如果U盘插在电脑的USB3.0接口上，建议选择USB2.0接口，我的就是这样。USB3.0虚拟机识别正常，进入FreeNAS提示无磁盘，换上USB2.0接口后识别正常</p>
+                                <!-- <div class="comment-status">
+                                    <span>评论需要管理员审核</span>
+                                </div> -->
+                                <div class="comment-body" v-html="comment.content.rendered">
+
                                 </div>
                                 <div class="comment-action">
-                                    <a href="#">回复</a>
+                                    <a v-on:click="reply(comment.id, comment.author_name)" href="#reply_form">回复</a>
                                 </div>
                             </div>
-                            <ul class="children">
-                                <li>
+                            <ul class="children" v-if="comment._links.children">
+                                <li v-for="child in comments" v-if="comment.id == child.parent">
                                     <div class="reply-comment">
                                         <div class="comment-header">
                                             <span class="author">
-                                                <a class="username" href="#">李铭</a>
+                                                <a class="username">{{ child.author_name }}</a> 回复
+                                                <a class="username">{{ comment.author_name }}</a>
                                             </span>
-                                            <span class="time"><i>2017-07-03 16:03:05</i></span>
+                                            <span class="time"><i>{{ child.date | date_format }}</i></span>
                                         </div>
-                                        <div class="comment-status">
+                                        <!-- <div class="comment-status">
                                             <span>评论需要管理员审核</span>
-                                        </div>
-                                        <div class="comment-body">
-                                            <p>我用vi命令修改，但是保存时提示文件只读不能保存。请问是用什么方法修改的。</p>
-                                        </div>
+                                        </div> -->
+                                        <div class="comment-body" v-html="child.content.rendered"></div>
+
                                         <div class="comment-action">
                                             <a href="#">回复</a>
                                         </div>
                                     </div>
+                                    <ul class="children" v-if="child._links.children">
+                                        <li v-for="thd in comments" v-if="child.id == thd.parent">
+                                            <div class="reply-comment">
+                                                <div class="comment-header">
+                                                    <span class="author">
+                                                        <a class="username">{{ thd.author_name }}</a> 回复
+                                                        <a class="username">{{ child.author_name }}</a>
+                                                    </span>
+                                                    <span class="time"><i>{{ thd.date | date_format }}</i></span>
+                                                </div>
+                                                <!-- <div class="comment-status">
+                                                    <span>评论需要管理员审核</span>
+                                                </div> -->
+                                                <div class="comment-body" v-html="thd.content.rendered"></div>
+
+                                                <div class="comment-action">
+                                                    <a href="#">回复</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <div class="main-comment">
-                                <div class="comment-header">
-                                    <span class="author">
-                                        <a class="username" href="#">小白</a>
-                                    </span>
-                                    <span class="time">2017-07-03 16:03:05</span>
-                                </div>
-                                <div class="comment-status">
-                                    <span>评论需要管理员审核</span>
-                                </div>
-                                <div class="comment-body">
-                                    <p>如果U盘插在电脑的USB3.0接口上，建议选择USB2.0接口，我的就是这样。USB3.0虚拟机识别正常，进入FreeNAS提示无磁盘，换上USB2.0接口后识别正常</p>
-                                </div>
-                                <div class="comment-action">
-                                    <a href="#">回复</a>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
+                    <div class="uk-text-center" v-show="headers['x-wp-totalpages'] > page_count">
+                        <button v-on:click="loadmore" class="uk-button uk-button-default uk-button-small">加载更多评论</button>
+                    </div>
                 </div>
-                <div class="comments-form">
+                <div class="comments-form" id="reply_form">
                     <form uk-grid>
                         <div class="uk-width-1-1@s">
-                            <div class="uk-margin">
-                                <textarea class="uk-textarea" placeholder="发表评论"></textarea>
+                            <div v-show="reply_to">
+                                <span class="uk-text-primary">回复 {{ reply_to }}</span>
                             </div>
                             <div class="uk-margin">
-                                <input class="uk-input" type="text" name="" value="" placeholder="昵称">
+                                <textarea class="uk-textarea" v-model="content" placeholder="发表评论"></textarea>
                             </div>
                             <div class="uk-margin">
-                                <input class="uk-input" type="email" name="" value="" placeholder="E-mail">
+                                <input class="uk-input" type="text" name="username" v-model="author_name" placeholder="昵称">
                             </div>
                             <div class="uk-margin">
-                                <input class="uk-input" type="text" name="" value="" placeholder="网址(选填)">
+                                <input class="uk-input" type="email" name="email" v-model="author_email" placeholder="E-mail">
                             </div>
                             <div class="uk-margin">
-                                <button class="uk-button uk-button-primary" type="submit">提交</button>
+                                <input class="uk-input" type="text" name="url" v-model="author_url" placeholder="网址(选填)">
+                            </div>
+                            <div class="uk-margin">
+                                <button v-on:click.prevent="create_comment" class="uk-button uk-button-primary">提交</button>
                             </div>
                         </div>
                     </form>
                 </div>
-                
+
             </div>
-        </div>-->
-        <?php endif; ?>
+        </div>
 
         <div class="creative-commons">
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
             <div class="license-text">
                 本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
             </div>
-            
+
         </div>
     </div>
 
     <?php get_footer(); ?>
 
-    <script type="text/javascript">
-        
-    </script>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/comments.js"></script>
 </body>
 
 </html>
