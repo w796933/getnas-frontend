@@ -44,7 +44,7 @@
     (function() {
     var hm = document.createElement("script");
     hm.src = "https://hm.baidu.com/hm.js?bbd31a2e32854120f98d5881253c8f7e";
-    var s = document.getElementsByTagName("script")[0]; 
+    var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
     })();
     </script>
@@ -71,7 +71,7 @@
                                     <li><a href="/category/cloud">云计算</a></li>
                                     <li><a href="/category/resilio-sync">Resilio Sync</a></li>
                                     <li><a href="/category/nextcloud">NextCloud</a></li>
-                                    <li><a href="/category/Syncthing">syncthing</a></li>
+                                    <li><a href="/category/syncthing">syncthing</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -102,7 +102,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </li>
                         <li class="under"><a href="https://shop19309090.youzan.com" target="_blank">IT 商店</a></li>
@@ -131,7 +131,7 @@
                                     <li><a href="/category/cloud">云计算</a></li>
                                     <li><a href="/category/resilio-sync">Resilio Sync</a></li>
                                     <li><a href="/category/nextcloud">NextCloud</a></li>
-                                    <li><a href="/category/Syncthing">syncthing</a></li>
+                                    <li><a href="/category/syncthing">syncthing</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active">
@@ -165,7 +165,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            
+
                             <!--<li class="uk-nav-header"></li>
                             <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span> 登录</a></li>
                             <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: users"></span> 注册</a></li>
@@ -225,6 +225,22 @@
                         </div>
                     <?php endif;?>
 
+                    <?php if ( is_category('nextcloud') ) : ?>
+                        <div class="relate-link">
+                            <ul>
+                                <li>[<a href="/what-is-nextcloud">NextCloud 介绍</a>]</li>
+                            </ul>
+                        </div>
+                    <?php endif;?>
+
+                    <?php if ( is_category('syncthing') ) : ?>
+                        <div class="relate-link">
+                            <ul>
+                                <li>[<a href="/what-is-syncthing">Syncthing 介绍</a>]</li>
+                            </ul>
+                        </div>
+                    <?php endif;?>
+
                     <?php if ( is_tag('digitalocean') ) : ?>
                         <div class="relate-link">
                             <ul>
@@ -235,7 +251,7 @@
 
                     <p>{{ headers['x-wp-total'] ? '共有 ' + headers['x-wp-total'] + ' 篇相关指南' : '数据读取中...' }} </p>
                 </div>
-                
+
                 <div class="guide-search">
                     <form class="" v-on:submit.prevent="search" uk-grid>
                         <div class="uk-inline uk-width-1-1">
