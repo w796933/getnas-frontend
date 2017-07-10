@@ -22,12 +22,12 @@
                                         <a class="uk-link-text" v-bind:href="guide.link">{{ guide.title.rendered }}</a>
                                     </h3>
                                     <div class="meta">
-                                        <!--<div class="views">
-                                            <i class="fa fa-eye" aria-hidden="true"></i> 1.4k
-                                        </div>-->
-                                        <!--<div class="comments">
-                                            <i class="fa fa-comments-o" aria-hidden="true"></i> 4
-                                        </div>-->
+                                        <div class="views">
+                                            <i class="fa fa-eye" aria-hidden="true"></i> {{ guide.post_views }}
+                                        </div>
+                                        <div class="comments">
+                                            <i class="fa fa-comments-o" aria-hidden="true"></i> {{ guide.comment_count }}
+                                        </div>
                                         <div class="author">
                                             <i class="fa fa-user-circle" aria-hidden="true"></i> {{ guide._embedded.author[0].name }}
                                         </div>

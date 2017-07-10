@@ -20,3 +20,24 @@ function filter_rest_allow_anonymous_comments() {
     return true;
 }
 add_filter('rest_allow_anonymous_comments','filter_rest_allow_anonymous_comments');
+
+// REST API 附加 post 阅读总数
+add_action('rest_api_init', function () {
+    register_rest_field('post', 'post_views', array(
+        'get_callback' => function ($data) {
+            return pvc_get_post_views($data['id']);
+        }
+    ));
+});
+// REST API 附加 post 评论总数
+add_action('rest_api_init', function () {
+    register_rest_field('post', 'comment_count', array(
+        'get_callback' => function ($data) {
+            $arg = array(
+                'post_id' => $data['id'],
+                'count' => true // 只返回评论总数
+            );
+            return get_comments( $arg );
+        }
+    ));
+});
