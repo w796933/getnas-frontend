@@ -71,7 +71,7 @@
                                     <li><a href="/category/cloud">云计算</a></li>
                                     <li><a href="/category/resilio-sync">Resilio Sync</a></li>
                                     <li><a href="/category/nextcloud">NextCloud</a></li>
-                                    <li><a href="/category/syncthing">syncthing</a></li>
+                                    <li><a href="/category/syncthing">Syncthing</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -131,7 +131,7 @@
                                     <li><a href="/category/cloud">云计算</a></li>
                                     <li><a href="/category/resilio-sync">Resilio Sync</a></li>
                                     <li><a href="/category/nextcloud">NextCloud</a></li>
-                                    <li><a href="/category/syncthing">syncthing</a></li>
+                                    <li><a href="/category/syncthing">Syncthing</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active">
@@ -245,6 +245,14 @@
                         <div class="relate-link">
                             <ul>
                                 <li>[<a href="https://m.do.co/c/ea1be3ceca09" target="_blank">DigitalOcean 官网</a>]</li>
+                            </ul>
+                        </div>
+                    <?php endif;?>
+
+                    <?php if ( is_tag('vultr') ) : ?>
+                        <div class="relate-link">
+                            <ul>
+                                <li>[<a href="http://www.vultr.com/?ref=7126678" target="_blank">Vultr 官网</a>]</li>
                             </ul>
                         </div>
                     <?php endif;?>
