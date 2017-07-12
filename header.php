@@ -49,6 +49,9 @@
     })();
     </script>
 
+    <?php if( is_home() ): ?>
+        <meta name="baidu_union_verify" content="6d7512e02296d20af9b02f155995c6ca">
+    <?php endif; ?>
 </head>
 
 <body>
