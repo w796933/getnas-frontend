@@ -50,7 +50,7 @@
     </script>
 
     <?php if( is_home() ): ?>
-        <meta name="baidu_union_verify" content="6d7512e02296d20af9b02f155995c6ca">
+        <meta name="baidu_union_verify" content="f2c371a3186351b4f54618d12b79c1d1">
     <?php endif; ?>
 </head>
 
