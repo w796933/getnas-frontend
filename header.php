@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php if ( is_single() || is_page() ) : else : ?>
+    <?php if ( is_single() || is_page() ) : ?>
+<meta name="keywords" content="<?php echo the_field('single_keywords'); ?>">
+    <meta name="description" content="<?php echo the_field('single_description'); ?>">
+    <?php else : ?>
+<meta name="keywords" content="FreeNAS,BTSync,Resilio Sync,OwnCloud,NextCloud,Ubuntu,开源软件,云计算,技术指南">
     <meta name="description" content="GetNAS 是技术指南创作与分享平台，专注于创作高质量的原创技术教程，内容涉及 FreeNAS、Ubuntu、云计算、NextCloud、Syncthing、Resilio Sync 以及树莓派等。">
     <?php endif; ?>
+
     <?php if ( is_home() ): ?>
     <title><?php bloginfo('name') ; echo ' - ' ; bloginfo('description'); ?></title>
     <?php elseif ( is_single() || is_page() ): ?>
