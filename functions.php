@@ -14,6 +14,19 @@ if ( ! function_exists('my_the_tags') ) :
     }
 endif;
 
+// 使用七牛云存储替换本地图片
+if( ! is_admin() ) {
+    function getnas_img_to_qiniu() {
+        ob_start('getnas_link_replace');
+    }
+    function getnas_link_replace($html) {
+        $search = 'https://www.getnas.com';
+        $replace = 'http://img.getnas.com';
+        return str_replace($search, $replace, $html);
+    }
+    add_action('wp_loaded', 'getnas_img_to_qiniu');
+}
+
 // 修复 rest api 禁止未登录用户发表评论的问题
 // https://developer.wordpress.org/reference/classes/wp_rest_comments_controller/create_item_permissions_check/
 function filter_rest_allow_anonymous_comments() {
