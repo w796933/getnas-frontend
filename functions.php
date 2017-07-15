@@ -20,8 +20,8 @@ if( ! is_admin() ) {
         ob_start('getnas_link_replace');
     }
     function getnas_link_replace($html) {
-        $search = 'https://www.getnas.com';
-        $replace = 'http://img.getnas.com';
+        $search = 'https://www.getnas.com/wp-content/uploads';
+        $replace = 'http://img.getnas.com/wp-content/uploads';
         return str_replace($search, $replace, $html);
     }
     add_action('wp_loaded', 'getnas_img_to_qiniu');
