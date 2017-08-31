@@ -66,6 +66,7 @@
                 <nav class="uk-visible@s">
                     <ul>
                         <li class="active"><a href="/">首页</a></li>
+                        <li class="under"><a href="https://github.com/getnas/getnas">搞个 NAS</a></li>
                         <li>
                             <a href="">热门主题</a>
                             <div id="hot-category" uk-dropdown>
@@ -110,7 +111,7 @@
 
                             </div>
                         </li>
-                        <li class="under"><a href="https://shop19309090.youzan.com" target="_blank">IT 商店</a></li>
+                        <li class="under"><a href="https://weidian.com/?userid=342133488" target="_blank">IT 商店</a></li>
                     </ul>
                 </nav>
                 <div class="uk-visible@s" id="account">
@@ -127,6 +128,9 @@
 
                         <ul class="uk-nav uk-nav-default">
                             <li class="uk-active"><a href="/">首页</a></li>
+                            <li class="uk-active">
+                                <a href="https://github.com/getnas/getnas">搞个 NAS</a>
+                            </li>
                             <li class="uk-parent uk-active">
                                 <a>热门主题</a>
                                 <ul class="uk-nav-sub">
@@ -140,7 +144,7 @@
                                 </ul>
                             </li>
                             <li class="uk-active">
-                                <a href="https://shop19309090.youzan.com">IT 商店</a>
+                                <a href="https://weidian.com/?userid=342133488">IT 商店</a>
                             </li>
                             <li class="uk-parent uk-active">
                                 <a>用户交流</a>
